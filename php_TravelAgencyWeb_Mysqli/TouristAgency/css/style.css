@@ -1,0 +1,130 @@
+.head{
+	background-size:  cover;
+	height: 150px;
+	color: #450183;
+	font-size: 20px;
+    font-weight: bold;
+
+	 h3, h4, h5{
+		 font-family: 'Calypso';
+		background: #fff;
+		padding: 5px;
+		margin: 0;
+		color: #4b03ca;
+		}
+	h2{
+		font-family: 'Calypso';
+		color: #f46f00;
+	}
+	a{
+		font-family: 'Calypso';
+		background: transparent;
+		padding: 5px;
+		margin: 0;
+		color: #4b03ca;
+		font-size: 22px;
+	}
+	form{
+		width:200px;
+		float: right;
+
+		input{
+
+			width:200px;
+			margin: 5px ;
+			}
+	}
+}
+header{
+	font-family: 'Calypso';
+	color: #2300c8;
+	font-size: 20px;
+
+}
+footer{
+	text-align: center;
+	background-color: #ddf;
+}
+@font-face {
+	font-family: 'Calypso';
+	src: url('../fonts/ofont.ru_Calypso.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	color: blue;
+}
+h2, h3{
+	font-family: 'Calypso';
+	color: #f46f00;
+	font-weight: bold;
+}
+.comment {
+
+	color: #136567;
+	margin-left: 30px;
+}
+@media screen and (min-width: 950px) {
+	.head {
+		background: none;
+	}
+	html, body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+
+	body {
+		position: relative;
+		font-family: Arial, sans-serif;
+		background-color: #f4f4f4;
+		width: 100%;
+		min-height: 100%;
+		font-size: 18px;
+	}
+
+	body::after {
+		content: '';
+		/*position: absolute;*/
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-image: url('../images/nebo.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		opacity: 0.7;
+		z-index: -1;
+	}
+
+
+	footer {
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0);
+		color: #fff;
+		font-size: 13px;
+		text-shadow: 2px 2px 5px #007e8e;
+	}
+
+	.content {
+		width: 800px;
+		margin: 0 auto;
+		background: rgba(255, 255, 255, 0.8);
+		padding: 10px;
+		border-radius: 10px;
+		min-height: 500px;
+		overflow: hidden;
+
+		.row > div {
+			height: 300px;
+			width: 400px;
+			overflow-y: scroll;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+	}
+
+
+}
