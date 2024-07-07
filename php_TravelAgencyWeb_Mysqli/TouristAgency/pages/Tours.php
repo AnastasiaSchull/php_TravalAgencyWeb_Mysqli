@@ -3,29 +3,36 @@
 <?php 
 $mysqli = connect();
 echo '<form action="index.php?page=1" method="post">'; 
-echo '<select name="countryid" class="col-sm-3 col-md-3 col-lg-3">'; 
+echo '<select name="countryid" class="col-sm-3 col-md-3 col-lg-3">';
+echo '<option value="0">Select country...</option>';
 $res=$mysqli->query("SELECT * FROM countries ORDER BY country");
-echo '<option value="0">Select country...</option>'; 
+//echo '<option value="0">Select country...</option>';
 while ($row=mysqli_fetch_array($res, MYSQLI_NUM)) 
 { 
-	echo '<option value="'.$row[0].'">'.$row[1].' </option>'; 
+	//echo '<option value="'.$row[0].'">'.$row[1].' </option>';
+    // проверяем выбрана ли страна
+    $selected = ($row[0] == $_POST['countryid']) ? 'selected' : '';
+    echo '<option value="'.$row[0].'" '.$selected.'>'.$row[1].'</option>';
 } 
 mysqli_free_result($res); 
 echo '<input type="submit" name="selcountry" value="Select Country" class="btn btn-xs btn-primary">'; 
 echo '</select>';
-if(isset($_POST['selcountry'])) 
+//if(isset($_POST['selcountry']))
+if(isset($_POST['selcountry']) && $_POST['countryid'] != 0)
 { 
 	echo '<br/>'; 
 	$countryid=$_POST['countryid']; 
-	if($countryid == 0) 
-		exit(); 
+//	if($countryid == 0)
+//		exit();
 	$res=$mysqli->query("SELECT * FROM cities where countryid=".$countryid." ORDER BY city"); 
 	echo '<select name="cityid" class="col-sm-3 col-md-3 col-lg-3">'; 
 	echo '<option value="0">Select city...</option>'; 
 	while ($row=mysqli_fetch_array($res, MYSQLI_NUM)) 
 	{  
-		echo '<option value="'.$row[0].'">'.$row[1].'</option>'; 
-	} 
+		//echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+        $selected = ($row[0] == $_POST['cityid']) ? 'selected' : '';
+        echo '<option value="'.$row[0].'" '.$selected.'>'.$row[1].'</option>';
+    }
 	mysqli_free_result($res); 
 	echo '</select>'; 
 	echo '<input type="submit" name="selcity" value="Select City"  class="btn btn-xs btn-primary">'; 
