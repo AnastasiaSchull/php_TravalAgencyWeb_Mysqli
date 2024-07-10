@@ -1,11 +1,38 @@
 /*body{*/
 /*font-family:Arial,sans-serif;*/
 /*}*/
-.well{
-text-align:justify;
+@font-face {
+    font-family: 'Calypso';
+    src: url('../fonts/ofont.ru_Calypso.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
-main>h2{
+@font-face {
+    font-family: 'Slim';
+    src: url('../fonts/slimsansserif2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.comment {
+    color: #136567;
+    /*margin-left: 10px;*/
+    font-family: 'Slim',Arial,sans-serif !important;
+    font-size: larger;
+}
+.well{
+    text-align:justify;
+    margin-right:40px ;
+    margin-left:40px ;
+    font-family: 'Slim',Arial,sans-serif;
+    font-size: larger;
+}
+main>h2 {
     font-weight: 700;
+}
+h2 , h3{
+    font-family: 'Calypso';
+    color: #f46f00;
+    font-weight: bold;
 }
 
 footer{
@@ -13,11 +40,12 @@ footer{
 		background-color: #ddf;
 		}
 
-@media screen and (min-width: 950px){
-
-/*body{*/
-/*    background: url(../images/back3.jpg);*/
-/*}*/
+/*@media screen and (min-width: 950px){*/
+    @media (min-width: 992px) {
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
 
 main{
     width:900px;
@@ -40,8 +68,6 @@ main>h2{
     height:400px;
 }
 
-
-
 footer{
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
@@ -50,3 +76,7 @@ footer{
     text-shadow:2px 2px 5px #090000;
 }
 }
+#gallery {
+    margin-left: 120px !important;
+}
+

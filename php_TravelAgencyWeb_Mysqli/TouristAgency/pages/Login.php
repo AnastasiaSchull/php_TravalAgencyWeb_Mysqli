@@ -32,6 +32,6 @@ else
 		echo '" class="input-group input-group-sm pull-right" method="post">';  
 		echo '<input type="text" name="login" size="10" class="" placeholder="login">'.  
 		'<input type="password" name="pass" size="10" class="" placeholder="password">'.  
-		'<input type="submit" id="press" value="Login" class="btn btn-default btn-xs" name="press"></form>'; 
+		'<input style="padding: 7px 10px" type="submit" id="press" value="Login" class="btn btn-default btn-xs" name="press"></form>';
 	} 
 } 

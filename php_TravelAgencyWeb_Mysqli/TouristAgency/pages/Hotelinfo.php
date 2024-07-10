@@ -26,12 +26,12 @@ if(isset($_GET['hotel']))
 	$hinfo=$row[6];
 	mysqli_free_result($res);
 	echo '<h2 class="text-uppercase text-center">'.$hname.'</h2>';
-	echo '<div class="row"><div class="col-md-6 text-center">';
+	echo '<div class="row"><div class="col-md-12 text-center">';
     //$mysqli = connect();
 	$sel='select imagepath from images where hotelid='.$hotel;
 	$res=$mysqli->query($sel);
-	echo '<span class="label label-info">Watch our pictures</span>';
-	echo'<ul id="gallery">';
+	echo '<span class="label label-info" >Watch our pictures</span>';
+	echo'<ul id="gallery" >';
 	$i=0;
 	while($row=mysqli_fetch_array($res, MYSQLI_NUM))
 	{
@@ -43,10 +43,10 @@ if(isset($_GET['hotel']))
 	{
 		echo '<img src="../images/star.png" alt="star">';
 	}
-	echo '<h2 class="text-center">Cost&nbsp;<span class="label label-info">'
+	echo '<h2 class="text-center" ">Cost&nbsp;<span style=" padding-bottom: 0px !important;" class="label label-info">'
 	.$hcost.' $</span>';
 	echo '<a href="#" class="btn btn-success">Book This Hotel</a></h2>';
-	echo '</div><div class="col-md-6"><p class="well">'.$hinfo.'</p></div>';
+	echo '</div><div class="col-md-12"><p class="well">'.$hinfo.'</p></div>';//class="col-md-6">
 	echo '</div></main>';
 
     // запрос для отображения комментариев
@@ -56,7 +56,7 @@ if(isset($_GET['hotel']))
                  WHERE c.hotel_id = $hotel 
                  ORDER BY c.posted DESC";
     $comments = $mysqli->query($commentQuery);
-    echo "<div style='color: #01707a; margin:30px '   ><h3>Comments:</h3>";
+    echo "<div style='color: #01707a; margin:20px 50px'   ><h3>Comments:</h3>";
     if ($comments->num_rows > 0) {
         while ($comment = $comments->fetch_assoc()) {
             echo "<div class='comment'>";

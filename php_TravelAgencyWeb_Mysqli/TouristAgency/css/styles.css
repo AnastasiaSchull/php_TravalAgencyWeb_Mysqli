@@ -6,17 +6,6 @@
     font-style: normal;
 }
 
-/*body {*/
-/*    font-family: Arial, sans-serif;*/
-/*    background-color: #f4f4f4;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    background-image: url('../images/World-map.jpg');*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    background-attachment: fixed;*/
-/*}*/
 body {
     position: relative;
     font-family: 'Calypso', Arial, sans-serif;
@@ -46,7 +35,6 @@ strong{
 }
 
 p{
-    /*margin-left: 20px;*/
     text-align: center;
     color: aqua;
 }
@@ -175,3 +163,4 @@ form input[type="submit"]:hover {
     font-size: 18px;
     text-align: center;
 }
+

@@ -52,15 +52,31 @@ footer{
 	font-style: normal;
 	color: blue;
 }
+@font-face {
+	font-family: 'Slim';
+	src: url('../fonts/slimsansserif2.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 h2, h3{
 	font-family: 'Calypso';
 	color: #f46f00;
 	font-weight: bold;
 }
 .comment {
-
 	color: #136567;
 	margin-left: 30px;
+	font-family: 'Calypso',Arial,sans-serif !important;
+	font-size: larger;
+}
+select {
+	font-family: 'Slim' !important;
+	color: #136567;
+}
+option{
+	font-family: 'Slim' !important;
+
+	color: #344a4a;
 }
 @media screen and (min-width: 950px) {
 	.head {
@@ -84,7 +100,6 @@ h2, h3{
 
 	body::after {
 		content: '';
-		/*position: absolute;*/
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -126,5 +141,41 @@ h2, h3{
 		}
 	}
 
+	.table {
+		font-family: 'Slim' !important;
+		font-size: larger;
+		border-collapse: separate;
+		border-spacing: 0;
+		border-radius: 10px; /* Скругление углов */
+		overflow: hidden; /* Обеспечивает, чтобы рамка оставалась внутри углов */
+		background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+		margin-left: -40px;!important;
+		margin-top: 20px;
+
+	}
+
+	.table th, .table td {
+		border-left: 1px solid #ddd; /* добавляет границу между столбцами */
+		border-right: 1px solid #ddd; /* добавляет границу между столбцами */
+	}
+
+	.table th:first-child, .table td:first-child {
+		border-left: none; /* убирает лишнюю левую границу у первого столбца */
+	}
+
+	.table th:last-child, .table td:last-child {
+		border-right: none; /* убирает лишнюю правую границу у последнего столбца */
+	}
+
+	.table thead th {
+		background-color: rgba(255, 255, 255, 0.9); /* более непрозрачный фон для заголовков */
+		border-bottom: 2px solid #ddd;
+		text-align: center;
+
+	}
+
+	.table tbody tr:hover {
+		background-color: rgba(245, 245, 245, 0.8); /* Полупрозрачный фон для строки при наведении */
+	}
 
 }

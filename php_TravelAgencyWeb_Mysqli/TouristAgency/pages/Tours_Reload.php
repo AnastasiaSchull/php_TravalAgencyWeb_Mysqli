@@ -6,30 +6,27 @@ echo '<form action="index.php?page=1" method="post">';
 echo '<select name="countryid" class="col-sm-3 col-md-3 col-lg-3">';
 echo '<option value="0">Select country...</option>';
 $res=$mysqli->query("SELECT * FROM countries ORDER BY country");
-//echo '<option value="0">Select country...</option>';
 while ($row=mysqli_fetch_array($res, MYSQLI_NUM)) 
 { 
 	//echo '<option value="'.$row[0].'">'.$row[1].' </option>';
-    // проверяем выбрана ли страна
+    //проверяем выбрана ли страна
+    //тк страница, перезагружается после каждого запроса,то нужно явно использовать selected
     $selected = ($row[0] == $_POST['countryid']) ? 'selected' : '';
     echo '<option value="'.$row[0].'" '.$selected.'>'.$row[1].'</option>';
 } 
 mysqli_free_result($res); 
 echo '<input type="submit" name="selcountry" value="Select Country" class="btn btn-xs btn-primary">'; 
 echo '</select>';
-//if(isset($_POST['selcountry']))
+
 if(isset($_POST['selcountry']) && $_POST['countryid'] != 0)
 { 
 	echo '<br/>'; 
-	$countryid=$_POST['countryid']; 
-//	if($countryid == 0)
-//		exit();
+	$countryid=$_POST['countryid'];
 	$res=$mysqli->query("SELECT * FROM cities where countryid=".$countryid." ORDER BY city"); 
 	echo '<select name="cityid" class="col-sm-3 col-md-3 col-lg-3">'; 
 	echo '<option value="0">Select city...</option>'; 
 	while ($row=mysqli_fetch_array($res, MYSQLI_NUM)) 
-	{  
-		//echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+	{
         $selected = ($row[0] == $_POST['cityid']) ? 'selected' : '';
         echo '<option value="'.$row[0].'" '.$selected.'>'.$row[1].'</option>';
     }

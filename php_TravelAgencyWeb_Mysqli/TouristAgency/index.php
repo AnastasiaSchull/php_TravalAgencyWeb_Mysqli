@@ -37,7 +37,7 @@ else
 		<?php
 			if(isset($_GET['page']))
 			{
-				if($page==1 && isset($_SESSION['ruser'])) include_once("pages/tours.php");
+				if($page==1 && isset($_SESSION['ruser'])) include_once("pages/tours_AJAX.php");
 				if($page==2 && isset($_SESSION['ruser'])) include_once("pages/comments.php");
 				if($page==3) include_once("pages/registration.php");
 				if($page==4 && isset($_SESSION['ruser'])) include_once("pages/admin.php");
